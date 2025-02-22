@@ -58,5 +58,5 @@ jobs:
         with:
           app-name: 'arthur-azure-project'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_74A1D91C0E8B486CA8F23D8299C5AE44 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9B5A0F89B9AD4EE8A1B1FCF100145DE8 }}
           package: .
