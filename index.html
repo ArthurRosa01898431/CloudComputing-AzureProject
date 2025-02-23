@@ -3,11 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image with Button</title>
+    <title>Random Image Fetcher</title>
+    <script>
+        async function fetchRandomImage() {
+            const response = await fetch('/api/GetRandomImage'); // Your Azure Function URL
+            const data = await response.json();
+            if (response.ok) {
+                document.getElementById('imageContainer').src = data.imageUrl;
+            } else {
+                console.error('Error fetching image:', data);
+                alert('Could not fetch image. Please try again.');
+            }
+        }
+    </script>
 </head>
 <body>
-    <img src="image.png" alt="Sample Image" width="300">
+    <h1>Random Image Fetcher</h1>
+    <button onclick="fetchRandomImage()">Get Random Image</button>
     <br>
-    <button onclick="alert('Button clicked!')">Click Me</button>
+    <img id="imageContainer" src="" alt="Random Image" style="margin-top: 20px; max-width: 100%; height: auto;">
 </body>
 </html>
